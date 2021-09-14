@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="SK">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>e-Fabrica</title>
+
+ <link href="<?php echo  (isset($this->assetDict[('app.css')]))?$this->assetDict[('app.css')]:$this->baseUrl.'/'.('app.css'); ?>" rel="stylesheet" type="text/css" />
+ <script src="https://kit.fontawesome.com/a6320eae03.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <div id="root"></div>
+ <script type="text/javascript" src="<?php echo  (isset($this->assetDict[('app.js')]))?$this->assetDict[('app.js')]:$this->baseUrl.'/'.('app.js'); ?>"></script>
+</body>
+</html>

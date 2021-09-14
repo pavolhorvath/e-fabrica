@@ -1,0 +1,368 @@
+@colorBackground: #1a1f2b;
+@colorDefault: #eeeeee;
+@colorTitle: #c0d0f5;
+@colorNonAction: #8d8d8d;
+@colorSaveAction: #758bc2;
+@colorRemoveAction: #8e4949;
+@font: "Open Sans", "SansSerif", "Arial";
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: @font;
+  background: @colorBackground;
+  color: @colorDefault;
+  height: 100%;
+}
+
+h1 {
+  color: @colorTitle;
+  font-size: xx-large;
+}
+
+.app-wrapper {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.6s all;
+  font-weight: bold;
+  color: @colorBackground;
+  cursor: pointer;
+  .icon {
+    margin-right: 5px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0px;
+  text-align: center;
+  background-color: fade(@colorDefault, 20%);
+  transition: 0.6s all;
+}
+
+.modal-wrapper {
+  background: @colorBackground;
+  border-radius: 10px;
+  padding: 40px;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.6s all;
+  .modal-title {
+    margin-bottom: 20px;
+    color: @colorTitle;
+    font-weight: bold;
+    font-size: x-large;
+    border-bottom: @colorDefault 1px solid;
+    padding: 5px;
+  }
+  .close-modal {
+    background-color: @colorNonAction;
+    &:hover {
+      background-color: darken(@colorNonAction, 20);
+    }
+  }
+  .modal-button-wrapper {
+    margin-top: 20px;
+    text-align: left;
+  }
+}
+
+///////////////// EMPLOYEES LIST /////////////////
+.employees-list-wrapper {
+  display: inline-block;
+
+  .employees-list-table {
+    margin: auto;
+    text-align: left;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    tr {
+      &:first-of-type {
+        border-bottom: @colorDefault 1px solid;
+      }
+    }
+
+    th {
+      font-size: large;
+      color: @colorTitle;
+    }
+
+    th, td {
+      padding: 10px 20px;
+    }
+
+    td {
+      .action-icon-button {
+        display: inline-block;
+        font-size: large;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: 0.6s all;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+
+      .show-employee {
+        color: @colorNonAction;
+        &:hover {
+          color: darken(@colorNonAction, 20);
+        }
+      }
+      .edit-employee {
+        color: @colorSaveAction;
+        &:hover {
+          color: darken(@colorSaveAction, 20);
+        }
+      }
+      .remove-employee {
+        color: @colorRemoveAction;
+        &:hover {
+          color: darken(@colorRemoveAction, 20);
+        }
+      }
+    }
+  }
+
+  .employees-button-wrapper {
+    text-align: left;
+
+    .add-employee {
+      margin-right: 10px;
+      background-color: @colorSaveAction;
+      &:hover {
+        background-color: darken(@colorSaveAction, 20);
+      }
+    }
+    .show-graph {
+      background-color: @colorNonAction;
+      &:hover {
+        background-color: darken(@colorNonAction, 20);
+      }
+    }
+  }
+}
+
+///////////////// EMPLOYEE ACTIONS /////////////////
+.employee-detail-wrapper {
+  .employee-detail-table {
+    text-align: left;
+    border-collapse: collapse;
+    .label {
+      font-weight: bold;
+      color: @colorTitle;
+      padding-right: 10px;
+    }
+    td {
+      padding: 10px 20px;
+    }
+  }
+}
+
+.employee-edit-wrapper {
+  .employee-edit-form {
+    td {
+      padding: 10px 20px;
+      text-align: left;
+    }
+    .label {
+      font-weight: bold;
+      color: @colorTitle;
+    }
+    input {
+      background: none;
+      border: @colorDefault 1px solid;
+      color: @colorDefault;
+      font-family: courier;
+      width: 250px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: 0.6s all;
+      &:focus {
+        outline: none;
+        border-color: @colorTitle;
+      }
+    }
+  }
+
+  .save-employee {
+    background-color: @colorSaveAction;
+    margin-right: 10px;
+    &:hover {
+      background-color: darken(@colorSaveAction, 20);
+    }
+  }
+}
+
+.employee-remove-wrapper {
+  .remove-employee {
+    background-color: @colorRemoveAction;
+    margin-right: 10px;
+    &:hover {
+      background-color: darken(@colorRemoveAction, 20);
+    }
+  }
+}
+
+.employees-age-table {
+  text-align: left;
+  .employee-name {
+    color: @colorTitle;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  .employee-age {
+    span {
+      display: inline-block;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: @colorSaveAction;
+      color: @colorBackground;
+    }
+  }
+}
+
+///////////////// DATE PICKER /////////////////
+.my-date-picker {
+  display: inline-block;
+
+  .date-picker-wrapper {
+    border-radius: 5px;
+    border: @colorDefault 1px solid;
+    //padding: 10px;
+    position: relative;
+    transition: 0.6s all;
+
+    input {
+      background: none;
+      border: none;
+      //color: @colorDefault;
+      font-family: courier;
+      width: 250px;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .calendar-icon {
+      position: absolute;
+      right: 15px;
+      top: 5%;
+      color: @colorDefault;
+      transition: 0.6s all;
+      cursor: pointer;
+    }
+
+    .calendar-option {
+      position: absolute;
+      z-index: 1;
+      color: @colorDefault;
+      padding: 10px;
+      width: 230px;
+      border-radius: 5px;
+      background: lighten(@colorBackground, 5);
+      text-align: center;
+
+      .option {
+        border-bottom: @colorDefault 1px solid;
+        position: relative;
+
+        .option-button {
+          display: inline-block;
+          position: absolute;
+          top: 30%;
+          cursor: pointer;
+          &:hover {
+            color: @colorTitle;
+          }
+        }
+        .option-button-back {
+          left: 5%;
+        }
+        .option-button-next {
+          right: 5%
+        }
+
+        .year-option, .month-option {
+          display: inline-block;
+          width: 100%;
+          padding: 10px 0;
+        }
+      }
+
+      .days {
+        margin-top: 10px;
+
+        .days-header {
+          .day-name {
+            margin: 2px;
+            font-weight: bold;
+            border-radius: 3px;
+            display: inline-block;
+            border: @colorTitle 2px solid;
+            color: @colorTitle;
+            width: 23px;
+            height: 21px;
+            padding-top: 1px;
+          }
+        }
+
+        .days-content {
+          .week {
+            .day {
+              margin: 2px;
+              border-radius: 3px;
+              display: inline-block;
+              border: @colorDefault 1px solid;
+              width: 25px;
+              height: 23px;
+              padding-top: 2px;
+              cursor: pointer;
+              transition: 0.3s all;
+
+              &:hover {
+                color: @colorTitle;
+                border-color: @colorTitle;
+              }
+            }
+            .empty-day {
+              border: darken(@colorDefault, 60) 1px solid;
+              color: darken(@colorDefault, 60);
+              cursor: auto;
+              &:hover {
+                border-color: darken(@colorDefault, 60);
+                color: darken(@colorDefault, 60);
+              }
+            }
+            .today, .selected-day {
+              border: @colorTitle 1px solid;
+              color: @colorTitle;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .date-picker-wrapper {
+      border-color: @colorTitle;
+
+      .calendar-icon {
+        color: @colorTitle;
+      }
+    }
+  }
+}

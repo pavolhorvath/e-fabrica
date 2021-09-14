@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+ <employee>
+  <id>1</id>
+  <firstName>Adam</firstName>
+  <lastName>Ondruška</lastName>
+  <phone>+421 901 956 135</phone>
+  <email>jozef.ondruska@gmail.com</email>
+  <birthDate>25.06.1989</birthDate>
+  <employmentDate>14.03.2019</employmentDate>
+  </employee>
+ <employee>
+  <id>2</id>
+  <firstName>Andrej</firstName>
+  <lastName>Strašivták</lastName>
+  <phone>+421 902 368 152</phone>
+  <email>andrej256@gmail.com</email>
+  <birthDate>03.11.1984</birthDate>
+  <employmentDate>01.07.2014</employmentDate>
+  </employee>
+</employees>
